@@ -11,7 +11,18 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+
+        // Define the Salt key
+        let o = Obfuscator(withSalt: [AppDelegate.self, NSObject.self, NSString.self])
+        
+        // Generate the byte array
+        let bytes = o.bytesByObfuscatingString(string: Constant.passwordValue)
+        print(bytes)
+        
+        
+        // Reveal the string
+        let value = o.reveal(key: bytes)
+        print(value)
     }
 
 
