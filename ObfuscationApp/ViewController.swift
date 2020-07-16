@@ -7,6 +7,10 @@
 
 import UIKit
 
+/*
+ Obfuscation: This library does obfuscation of hard-coded security-sensitive strings, and turns them into byte arrays.
+ */
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
